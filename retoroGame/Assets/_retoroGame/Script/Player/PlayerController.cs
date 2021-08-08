@@ -38,7 +38,6 @@ namespace _retoroGame.Player
 				.Where(_ => StateProcessor.State.Value.GetStateName() != _prevStateName)
 				.Subscribe(_ =>
 				{
-					Debug.Log("Now State:" + StateProcessor.State.Value.GetStateName());
 					_prevStateName = StateProcessor.State.Value.GetStateName();
 					StateProcessor.Execute();
 				})
@@ -47,7 +46,10 @@ namespace _retoroGame.Player
 
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.A))
+			if (Input.GetKeyDown(KeyCode.A) ||
+				Input.GetKeyDown(KeyCode.D) ||
+				Input.GetKeyDown(KeyCode.W) ||
+				Input.GetKeyDown(KeyCode.S))
 				StateProcessor.State.Value = StateMove;
 		}
 
@@ -61,8 +63,7 @@ namespace _retoroGame.Player
 		}
 		public void Move()
 		{
-			PlayerMove _playerMove = new PlayerMove();
-			_playerMove.Test(this.gameObject);
+			PlayerMove _playerMove = new PlayerMove(this.gameObject);
 
 			Debug.Log("StateがMoveに状態遷移しました。");
 		}

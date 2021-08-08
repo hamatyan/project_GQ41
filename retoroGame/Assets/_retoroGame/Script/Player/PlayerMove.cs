@@ -12,29 +12,43 @@ namespace _retoroGame.Player.State
 {
 	public class PlayerMove: MonoBehaviour
 	{
+		public Rigidbody rb;
+		float _moveSpeed = 1;
+
 		/// <summary>
-		/// 引数なしコンストラクタ
+		/// 引数ありコンストラクタ
 		/// </summary>
-		public PlayerMove ()
+		public PlayerMove (GameObject obj)
 		{
+			obj.AddComponent<PlayerMove>();
 			Debug.Log("PlayerMoveの引数なしコンストラクタ");
 		}
 
 		// Start is called before the first frame update
 		void Start()
 		{
-			
+			rb = this.GetComponent<Rigidbody>();
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
-
 		}
 
-		public void Test(GameObject obj)
+		void FixedUpdate()
 		{
-			obj.transform.DOMove(endValue: new Vector3(5.0f, 0.5f, 0), duration: 2.0f);
+			Move();
+		}
+
+		/// <summary>
+		/// キー移動
+		/// </summary>
+		private void Move()
+		{
+			var hori = Input.GetAxis("Horizontal");
+			var vert = Input.GetAxis("Vertical");
+
+			rb.MovePosition(rb.position + new Vector3(hori, 0, vert));
 		}
 	}
 }

@@ -19,6 +19,7 @@ namespace _retoroGame.Player
 		public PlayerStateIdle StateIdle { get; set; } = new PlayerStateIdle();
 		public PlayerStateRun StateRun { get; set; } = new PlayerStateRun();
 		public PlayerStateMove StateMove { get; set; } = new PlayerStateMove();
+		public PlayerStateJump StateJump { get; set; } = new PlayerStateJump();
 		//随時追加
 
 		private void Awake()
@@ -32,6 +33,7 @@ namespace _retoroGame.Player
 			StateIdle.ExecAction = Idle;
 			StateRun.ExecAction = Run;
 			StateMove.ExecAction = Move;
+			StateJump.ExecAction = Jump;
 
 			//ステートの値が変更されたら実行を行うようにする
 			StateProcessor.State
@@ -51,6 +53,10 @@ namespace _retoroGame.Player
 				Input.GetKeyDown(KeyCode.W) ||
 				Input.GetKeyDown(KeyCode.S))
 				StateProcessor.State.Value = StateMove;
+
+			if(Input.GetKeyDown(KeyCode.Space))
+				StateProcessor.State.Value = StateJump;
+
 		}
 
 		public void Idle()
@@ -63,9 +69,16 @@ namespace _retoroGame.Player
 		}
 		public void Move()
 		{
+			Debug.Log("StateがMoveに状態遷移しました。");
 			PlayerMove _playerMove = new PlayerMove(this.gameObject);
 
-			Debug.Log("StateがMoveに状態遷移しました。");
+		}
+		public void Jump()
+		{
+			Debug.Log("StateがJumpに状態遷移しました。");
+			PlayerJump _playerJump = new PlayerJump(this.gameObject);
+
+			_playerJump.Jump(this.gameObject);
 		}
 	}
 }

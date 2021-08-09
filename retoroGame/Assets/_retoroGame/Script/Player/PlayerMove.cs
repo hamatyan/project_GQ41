@@ -20,8 +20,8 @@ namespace _retoroGame.Player.State
 		/// </summary>
 		public PlayerMove (GameObject obj)
 		{
-			obj.AddComponent<PlayerMove>();
-			Debug.Log("PlayerMoveの引数なしコンストラクタ");
+			if(obj.GetComponent<PlayerMove>() == null)
+				obj.AddComponent<PlayerMove>();
 		}
 
 		// Start is called before the first frame update
@@ -33,6 +33,7 @@ namespace _retoroGame.Player.State
 		// Update is called once per frame
 		void Update()
 		{
+
 		}
 
 		void FixedUpdate()
@@ -41,13 +42,14 @@ namespace _retoroGame.Player.State
 		}
 
 		/// <summary>
-		/// キー移動
+		/// 十字キー移動
 		/// </summary>
 		private void Move()
 		{
 			var hori = Input.GetAxis("Horizontal");
 			var vert = Input.GetAxis("Vertical");
 
+			//速度は要調整
 			rb.MovePosition(rb.position + new Vector3(hori, 0, vert));
 		}
 	}

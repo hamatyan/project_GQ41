@@ -64,6 +64,14 @@ namespace _retoroGame.Player.State
 		}
 	}
 
+	public class PlayerStateJump : PlayerState
+	{
+		public override string GetStateName()
+		{
+			return "State:Jump";
+		}
+	}
+
 
 }
 

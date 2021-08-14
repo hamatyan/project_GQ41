@@ -56,7 +56,6 @@ namespace _retoroGame.Player
 
 			if(Input.GetKeyDown(KeyCode.Space))
 				StateProcessor.State.Value = StateJump;
-
 		}
 
 		public void Idle()
@@ -77,8 +76,6 @@ namespace _retoroGame.Player
 		{
 			Debug.Log("StateがJumpに状態遷移しました。");
 			PlayerJump _playerJump = new PlayerJump(this.gameObject);
-
-			_playerJump.Jump(this.gameObject);
 		}
 	}
 }

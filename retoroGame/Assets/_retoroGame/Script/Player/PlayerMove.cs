@@ -13,7 +13,6 @@ namespace _retoroGame.Player.State
 	public class PlayerMove: MonoBehaviour
 	{
 		public Rigidbody rb;
-		float _moveSpeed = 1;
 
 		/// <summary>
 		/// 引数ありコンストラクタ
@@ -33,12 +32,12 @@ namespace _retoroGame.Player.State
 		// Update is called once per frame
 		void Update()
 		{
-
+			Move();
 		}
 
 		void FixedUpdate()
 		{
-			Move();
+			
 		}
 
 		/// <summary>
@@ -50,7 +49,7 @@ namespace _retoroGame.Player.State
 			var vert = Input.GetAxis("Vertical");
 
 			//速度は要調整
-			rb.MovePosition(rb.position + new Vector3(hori, 0, vert));
+			rb.MovePosition(rb.position + new Vector3(hori * 0.25f, 0, vert * 0.25f));
 		}
 	}
 }

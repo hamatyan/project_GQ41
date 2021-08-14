@@ -12,9 +12,12 @@ namespace _retoroGame.Player.State
 {
 	public class PlayerJump : MonoBehaviour
 	{
-		[SerializeField] private float jumppower = 10.0f;
-		[SerializeField] private int jumpcount = 1;
-		[SerializeField] private float jumpanimetiontime = 0.5f;
+		//スクリタブルobjに切り替えしたほうがいいかな
+		private float jumppower = 5.0f;
+		private int jumpcount = 1;
+		private float jumpanimetiontime = 0.5f;
+
+		public Rigidbody rb;
 
 		/// <summary>
 		/// 引数ありコンストラクタ
@@ -22,28 +25,35 @@ namespace _retoroGame.Player.State
 		public PlayerJump(GameObject obj)
 		{
 			if (obj.GetComponent<PlayerJump>() == null)
+			{
 				obj.AddComponent<PlayerJump>();
+				jumppower = 5.0f;
+				jumpcount = 1;
+				jumpanimetiontime = 0.5f;
+	}
 		}
 
 		// Start is called before the first frame update
 		void Start()
 		{
-
+			rb = this.GetComponent<Rigidbody>();
+			Jump();
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
-
+			if (Input.GetKeyDown(KeyCode.Space))
+				Jump();
 		}
 
-		public void Jump(GameObject obj)
+		public void Jump()
 		{
-			obj.transform.DOJump(
-					Vector3.up,      // 移動終了地点
-					jumppower,               // ジャンプする力
-					jumpcount,               // ジャンプする回数
-					jumpanimetiontime              // アニメーション時間
+			rb.transform.DOJump(
+					rb.transform.position,			// 移動終了地点
+					5.0f,						// ジャンプする力
+					1,						// ジャンプする回数
+					0.5f				// アニメーション時間
 					);
 		}
 	}

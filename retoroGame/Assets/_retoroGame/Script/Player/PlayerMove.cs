@@ -49,7 +49,7 @@ namespace _retoroGame.Player.State
 			var vert = Input.GetAxis("Vertical");
 
 			//速度は要調整
-			rb.MovePosition(rb.position + new Vector3(hori * 0.25f, 0, vert * 0.25f));
+			rb.MovePosition(rb.position + new Vector3(hori * 0.1f, 0, vert * 0.1f));
 		}
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using _retoroGame.Player.State;
+using _retoroGame.Stage.Button;
 
 /// <summary>
 /// 参考URL：https://www.hanachiru-blog.com/entry/2019/04/20/010740
@@ -76,6 +77,24 @@ namespace _retoroGame.Player
 		{
 			Debug.Log("StateがJumpに状態遷移しました。");
 			PlayerJump _playerJump = new PlayerJump(this.gameObject);
+		}
+
+
+		/// <summary>
+		/// 当たり判定
+		/// </summary>
+		/// <param name="collider"></param>
+		private void OnCollisionEnter(Collision collision)
+		{
+			switch (collision.collider.tag)
+			{
+				case "Button":
+					ButtonFunction button = new ButtonFunction(collision.collider.gameObject);
+					//ボタン表示
+					break;
+				case "Enemy":
+					break;
+			}
 		}
 	}
 }

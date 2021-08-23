@@ -71,8 +71,6 @@ namespace _retoroGame.Player.State
 			return "State:Jump";
 		}
 	}
-
-
 }
 
 

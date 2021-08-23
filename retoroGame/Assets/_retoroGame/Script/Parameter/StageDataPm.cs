@@ -11,7 +11,7 @@ namespace _retoroGame.Stage.Parameter
 	public class StageDataPm : ScriptableObject
 	{
 		[SerializeField] protected int stage_number;  //ステージ用の番号
-		[SerializeField] protected int pair_number;  //ステージ連携のペア番号
+		//[SerializeField] protected int pair_number;  //ステージ連携のペア番号
 		[SerializeField] protected Color color;
 
 		public int Stage_Namber
@@ -19,10 +19,10 @@ namespace _retoroGame.Stage.Parameter
 			get { return stage_number; }
 		}
 
-		public int Pair_Number
-		{
-			get { return pair_number; }
-		}
+		//public int Pair_Number
+		//{
+		//	get { return pair_number; }
+		//}
 
 		public Color stage_Color
 		{

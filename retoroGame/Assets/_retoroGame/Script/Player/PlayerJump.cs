@@ -30,7 +30,7 @@ namespace _retoroGame.Player.State
 				jumppower = 5.0f;
 				jumpcount = 1;
 				jumpanimetiontime = 0.5f;
-	}
+			}
 		}
 
 		// Start is called before the first frame update

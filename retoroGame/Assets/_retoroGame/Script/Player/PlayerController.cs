@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UniRx;
 using _retoroGame.Player.State;
 using _retoroGame.Stage.Button;
@@ -14,6 +12,8 @@ namespace _retoroGame.Player
 	{
 		//変更前のステート名
 		public string _prevStateName;
+
+		public int number;
 
 		//ステート
 		public StateProcessor StateProcessor { get; set; } = new StateProcessor();
@@ -89,7 +89,9 @@ namespace _retoroGame.Player
 			switch (collision.collider.tag)
 			{
 				case "Button":
-					ButtonFunction button = new ButtonFunction(collision.collider.gameObject);
+					var name = collision.gameObject.name.GetLastChar(-1).ToString();
+					number = int.Parse(name);
+					ButtonFunction button = new ButtonFunction(collision.collider.gameObject, number);
 					//ボタン表示
 					break;
 				case "Enemy":

@@ -12,52 +12,44 @@ namespace _retoroGame.Stage.Button
 {
 	public class ButtonFunction : ButtonPm
 	{
-		ButtonPm.Button button;
+		public ButtonPm buttonPm;
+		public ButtonManager buttonManager;
+		public int select_number;
 
-		public ButtonFunction(GameObject obj)
+		public ButtonFunction(GameObject obj, int selectnum)
 		{
 			if (obj.GetComponent<ButtonFunction>() == null)
 			{
 				obj.AddComponent<ButtonFunction>();
-				button = Button.OFF;
 			}
+			select_number = selectnum;
 		}
 
 		// Start is called before the first frame update
 		void Start()
 		{
-
+			buttonPm = this.gameObject.GetComponent<ButtonPm>();
+			buttonManager = this.gameObject.transform.parent.GetComponent<ButtonManager>();
+			buttonPm._Button = Button.OFF;
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
-
+			
 		}
 
 		protected void ButtonSwich()
 		{
-			switch (button)
+			switch (buttonPm._Button)
 			{
 				case Button.ON:
-					button = Button.OFF;
+					buttonPm._Button = Button.OFF;
 					break;
 				case Button.OFF:
-					button = Button.ON;
+					buttonPm._Button = Button.ON;
 					break;
 			}
-		}
-
-		void ButtonOn()
-		{
-			//番号のスイッチOn
-			//ステージ回転起動
-		}
-
-		void ButtonOff()
-		{
-			//番号スイッチOff
-			//ステージがもとに戻る
 		}
 
 		private void OnCollisionStay(Collision collision)
@@ -66,10 +58,12 @@ namespace _retoroGame.Stage.Button
 			{
 				case "Player":
 					//ボタン表示
-					Debug.Log("Enter");
 					if (Input.GetKeyDown(KeyCode.Return))
 					{
+						buttonManager.Select_Number = select_number;
 						ButtonSwich();
+						Debug.Log("押した");
+						//送信　ボタンの中身
 					}
 					break;
 			}

@@ -16,6 +16,20 @@ namespace _retoroGame.Stage.Button
 		List<StagePm> stagePms;
 		List<int> stageNamber;
 
+		public int select_number;
+		public int Select_Number
+		{
+			set
+			{
+				select_number = value;
+			}
+			get
+			{
+				return select_number;
+			}
+		}
+		public int old_select_number;
+
 
 		void Awake()
 		{
@@ -30,11 +44,12 @@ namespace _retoroGame.Stage.Button
 		// Start is called before the first frame update
 		void Start()
 		{
+		
 			this.UpdateAsObservable()
-				.Where(_ => Input.GetMouseButton(0))
+				.Where(_ => buttonPms[select_number]._Button == ButtonPm.Button.ON)
 				.Subscribe(_ =>
 				{
-					Debug.Log("藩王");
+					Debug.Log("押した番号" + select_number);
 				});
 
 

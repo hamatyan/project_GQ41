@@ -38,6 +38,9 @@ namespace _retoroGame.Stage.Button
 
 		void Awake()
 		{
+			if(stageManager == null)
+				Debug.LogError(this.gameObject.name + "のstageManagerがアタッチされてない");
+
 			buttonPms = new List<ButtonPm>();
 			stagePms = new List<StagePm>();
 			buttonStagePms = new List<StagePm>();
@@ -49,10 +52,6 @@ namespace _retoroGame.Stage.Button
 			}
 			for (int i = 0; i < stageManager.stageObj.Count; i++)
 				stagePms.Add(stageManager.stageObj[i].GetComponent<StagePm>());
-
-			if(stageManager == null)
-				Debug.LogError(this.gameObject.name + "のstageManagerがアタッチされてない");
-
 		}
 
 		// Start is called before the first frame update

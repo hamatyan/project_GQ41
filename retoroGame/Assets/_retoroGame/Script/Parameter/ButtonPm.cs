@@ -19,6 +19,8 @@ namespace _retoroGame.Stage.Parameter
 				return button;
 			}
 		}
+		public bool isbutton; //押したことあるか
+
 
 		public enum Button
 		{
@@ -29,6 +31,7 @@ namespace _retoroGame.Stage.Parameter
 		private void Awake()
 		{
 			button = Button.OFF;
+			isbutton = false;
 		}
 
 		// Start is called before the first frame update

@@ -5,20 +5,23 @@ using UnityEngine;
 using System;
 using UniRx;
 using UniRx.Triggers;
+using UnityEngine.UI;
 
 
 namespace _retoroGame.Stage.Button
 {
 	public class ButtonManager : MonoBehaviour
 	{
-		public List<GameObject> buttonObjs;	//ボタンオブジェクト
-		public List<ButtonPm>  buttonPms;	//ボタンパラメータcs
-		public List<StagePm> stagePms;				//ステージパラメータcs
-		public List<StagePm> buttonStagePms;				//ボタンステージパラメータcs
-		List<int> stageNamber;				//ステージナンバー
-		public List<bool> buttonOn;
-
 		public StageManager stageManager;
+		public List<GameObject> buttonObjs;	//ボタンオブジェクト
+		private List<ButtonPm>  buttonPms;	//ボタンパラメータcs
+
+		private List<StagePm> stagePms;		//ステージパラメータcs
+		private List<StagePm> buttonStagePms;//ボタンステージパラメータcs
+
+
+		//今後テキスト用のスクリプト化
+		public Text buttonstatetext;
 
 		private int select_number;
 		public int Select_Number
@@ -36,42 +39,70 @@ namespace _retoroGame.Stage.Button
 		void Awake()
 		{
 			buttonPms = new List<ButtonPm>();
-			//stagePms = new List<StagePm>();
-			stageNamber = new List<int>();
+			stagePms = new List<StagePm>();
+			buttonStagePms = new List<StagePm>();
 
-			for(int i = 0;i < buttonObjs.Count;i++)
+			for (int i = 0;i < buttonObjs.Count;i++)
 			{
 				buttonPms.Add(buttonObjs[i].GetComponent<ButtonPm>());
+				buttonStagePms.Add(buttonObjs[i].GetComponent<StagePm>());
 			}
+			for (int i = 0; i < stageManager.stageObj.Count; i++)
+				stagePms.Add(stageManager.stageObj[i].GetComponent<StagePm>());
+
+			if(stageManager == null)
+				Debug.LogError(this.gameObject.name + "のstageManagerがアタッチされてない");
+
 		}
 
 		// Start is called before the first frame update
 		void Start()
 		{
-			
 			//ボタンが押された時
 			this.UpdateAsObservable()
-				.Where(_ => buttonPms[select_number]._Button == ButtonPm.Button.ON)
+				.Where(_ => buttonPms[select_number].isbutton == true)
 				.Subscribe(_ =>
 				{
-					var b = buttonPms[select_number]._Button;
 					var number = 0;
-					
-					for(int i = 0; i < stageManager.stageObj.Count; i++)
+					for (int i = 0; i < stageManager.stageObj.Count; i++)
 					{
 						number = i;
 						if (buttonStagePms[select_number].s_data.Stage_Namber == stagePms[i].s_data.Stage_Namber)
 							break;
 					}
-
-					Debug.Log()
-					Stage.Gimmik.StageRot stageRot = new Gimmik.StageRot(stagePms[number].gameObject);
+					ButtonProsess(buttonPms[select_number]._Button, number);
 				});
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
+			if(buttonstatetext != null)
+				DrawText();
+		}
+
+		void DrawText()
+		{
+			buttonstatetext.text = "{";
+			for (int i = 0; i < buttonPms.Count; i++)
+			{
+				buttonstatetext.text = buttonstatetext.text + buttonPms[i]._Button + ",";
+			}
+			buttonstatetext.text = buttonstatetext.text + "}";
+		}
+
+		void ButtonProsess(ButtonPm.Button button, int number)
+		{
+			switch(button)
+			{
+				case ButtonPm.Button.ON:
+					Stage.Gimmik.StageRot stageRot = new Gimmik.StageRot(stagePms[number].gameObject);
+					break;
+				case ButtonPm.Button.OFF:
+					Stage.Gimmik.StageResetTrans stageResetTrans = new Gimmik.StageResetTrans(stagePms[number].gameObject);
+
+					break;
+			}
 		}
 	}
 }

@@ -26,6 +26,8 @@ namespace _retoroGame.Player
 		private void Awake()
 		{
 			StateProcessor.State.Value = StateIdle;
+			if (buttonManager == null)
+				Debug.LogError(this.gameObject.name + "のbuttonManagerがアタッチされてない");
 		}
 
 		private void Start()

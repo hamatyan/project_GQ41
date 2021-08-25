@@ -19,6 +19,8 @@ namespace _retoroGame.Stage.Gimmik
 		void Start()
 		{
 			this.transform.DORotate(Vector3.up * 90f, 1f);
+
+			Destroy(this.gameObject.GetComponent<StageRot>());
 		}
 
 		// Update is called once per frame

@@ -713,6 +713,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5436651306837107355, guid: 95e275d43f28ef245ba5b647094c5a08,
+        type: 3}
+      propertyPath: buttonManager
+      value: 
+      objectReference: {fileID: 1469062262}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95e275d43f28ef245ba5b647094c5a08, type: 3}
 --- !u!1 &1090162870
@@ -762,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bdd4506e3af20546b83f46df1e53474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  s_data: {fileID: 11400000, guid: 440649122eac595498ee37c34e7a7899, type: 2}
+  s_data: {fileID: 11400000, guid: 32756a1a29547ca4cac5f1ed4152170d, type: 2}
 --- !u!65 &1090162873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -977,8 +982,15 @@ MonoBehaviour:
   buttonPms:
   - {fileID: 0}
   - {fileID: 0}
-  select_number: 0
-  old_select_number: 0
+  stagePms:
+  - {fileID: 102647869}
+  - {fileID: 1218398237}
+  - {fileID: 1542870601}
+  - {fileID: 481192230}
+  buttonStagePms:
+  - {fileID: 754199510}
+  - {fileID: 1090162872}
+  stageManager: {fileID: 1588732597}
 --- !u!4 &1469062263
 Transform:
   m_ObjectHideFlags: 0
@@ -1111,9 +1123,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588732595}
+  - component: {fileID: 1588732597}
   - component: {fileID: 1588732596}
   m_Layer: 0
-  m_Name: Stage
+  m_Name: StageManaber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1149,14 +1162,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f46eadd4478854e9d2ca36b3d4d6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj_stage:
+  stageManager: {fileID: 1588732597}
+  stage_obj_cnt: 0
+--- !u!114 &1588732597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588732594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08d10e119aebf24ea89c41cb331c1b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageObj:
   - {fileID: 102647864}
   - {fileID: 1218398232}
   - {fileID: 1542870600}
   - {fileID: 481192229}
-  cs_stage:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  stage_obj_cnt: 0

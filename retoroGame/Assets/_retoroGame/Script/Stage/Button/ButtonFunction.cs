@@ -14,15 +14,15 @@ namespace _retoroGame.Stage.Button
 	{
 		public ButtonPm buttonPm;
 		public ButtonManager buttonManager;
-		public int select_number;
+		//private int select_number;
 
-		public ButtonFunction(GameObject obj, int selectnum)
+		public ButtonFunction(GameObject obj/*, int selectnum*/)
 		{
 			if (obj.GetComponent<ButtonFunction>() == null)
 			{
 				obj.AddComponent<ButtonFunction>();
 			}
-			select_number = selectnum;
+			//select_number = selectnum;
 		}
 
 		// Start is called before the first frame update
@@ -36,7 +36,6 @@ namespace _retoroGame.Stage.Button
 		// Update is called once per frame
 		void Update()
 		{
-			
 		}
 
 		protected void ButtonSwich()
@@ -60,10 +59,10 @@ namespace _retoroGame.Stage.Button
 					//ボタン表示
 					if (Input.GetKeyDown(KeyCode.Return))
 					{
-						buttonManager.Select_Number = select_number;
 						ButtonSwich();
 						Debug.Log("押した");
-						//送信　ボタンの中身
+						//送信　ボタンの中身(現在plyerControllerでやってる)
+						//buttonManager.Select_Number = select_number;
 					}
 					break;
 			}

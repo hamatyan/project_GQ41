@@ -13,7 +13,7 @@ namespace _retoroGame.Player
 		//変更前のステート名
 		public string _prevStateName;
 
-		public int number;
+		public ButtonManager buttonManager;
 
 		//ステート
 		public StateProcessor StateProcessor { get; set; } = new StateProcessor();
@@ -90,8 +90,9 @@ namespace _retoroGame.Player
 			{
 				case "Button":
 					var name = collision.gameObject.name.GetLastChar(-1).ToString();
-					number = int.Parse(name);
-					ButtonFunction button = new ButtonFunction(collision.collider.gameObject, number);
+					var number = int.Parse(name);
+					ButtonFunction button = new ButtonFunction(collision.collider.gameObject/*, number*/);
+					buttonManager.Select_Number = number;
 					//ボタン表示
 					break;
 				case "Enemy":

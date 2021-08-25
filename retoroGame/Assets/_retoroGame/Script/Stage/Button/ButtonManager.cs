@@ -11,12 +11,16 @@ namespace _retoroGame.Stage.Button
 {
 	public class ButtonManager : MonoBehaviour
 	{
-		public List<GameObject> buttonObjs;
-		public List<ButtonPm>  buttonPms;
-		List<StagePm> stagePms;
-		List<int> stageNamber;
+		public List<GameObject> buttonObjs;	//ボタンオブジェクト
+		public List<ButtonPm>  buttonPms;	//ボタンパラメータcs
+		public List<StagePm> stagePms;				//ステージパラメータcs
+		public List<StagePm> buttonStagePms;				//ボタンステージパラメータcs
+		List<int> stageNamber;				//ステージナンバー
+		public List<bool> buttonOn;
 
-		public int select_number;
+		public StageManager stageManager;
+
+		private int select_number;
 		public int Select_Number
 		{
 			set
@@ -28,40 +32,46 @@ namespace _retoroGame.Stage.Button
 				return select_number;
 			}
 		}
-		public int old_select_number;
-
 
 		void Awake()
 		{
 			buttonPms = new List<ButtonPm>();
-			stagePms = new List<StagePm>();
+			//stagePms = new List<StagePm>();
 			stageNamber = new List<int>();
 
 			for(int i = 0;i < buttonObjs.Count;i++)
+			{
 				buttonPms.Add(buttonObjs[i].GetComponent<ButtonPm>());
+			}
 		}
 
 		// Start is called before the first frame update
 		void Start()
 		{
-		
+			
+			//ボタンが押された時
 			this.UpdateAsObservable()
 				.Where(_ => buttonPms[select_number]._Button == ButtonPm.Button.ON)
 				.Subscribe(_ =>
 				{
-					Debug.Log("押した番号" + select_number);
+					var b = buttonPms[select_number]._Button;
+					var number = 0;
+					
+					for(int i = 0; i < stageManager.stageObj.Count; i++)
+					{
+						number = i;
+						if (buttonStagePms[select_number].s_data.Stage_Namber == stagePms[i].s_data.Stage_Namber)
+							break;
+					}
+
+					Debug.Log()
+					Stage.Gimmik.StageRot stageRot = new Gimmik.StageRot(stagePms[number].gameObject);
 				});
-
-
-			//ボタンが押されたタイミング
-			//押されているボタンの情報を取得
-			//取得したボタンの番号のstageに回転ギミック処理のスクリプトをnewする
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
-
 		}
 	}
 }

@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 754199510}
   - component: {fileID: 754199511}
   m_Layer: 0
-  m_Name: Button(0)
+  m_Name: Button (0)
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -977,6 +977,7 @@ MonoBehaviour:
   buttonPms:
   - {fileID: 0}
   - {fileID: 0}
+  select_number: 0
   old_select_number: 0
 --- !u!4 &1469062263
 Transform:

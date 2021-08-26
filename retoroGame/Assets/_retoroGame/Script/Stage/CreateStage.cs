@@ -20,10 +20,31 @@ namespace _retoroGame.Stage
 			//番号を順番につなげる(本当はエディタ上で動作したい)
 			for (int i = 0; i < stage_obj_cnt; i++)
 			{
-				////エラー処理
+				if (i >= 3) return;
+
+				//var nowstageT = stageManager.stageObj[i].transform;
+				//var nextstageT = stageManager.stageObj[i + 1].transform;
+
+				//var nowstageP = nowstageT.position;
+				//var nextstageP = nextstageT.position;
+
+				////1番の座標ー0番の座標＝大きさ
+				//var s = nextstageP - nowstageP;
+				////座標は現在いる場所
+				//var p = nowstageP - s;
+
+
+				//stageManager.stageObj[i].transform.position = p;
+				//stageManager.stageObj[i].transform.localScale = s;
+
+				var c = stageManager.stageObj[i + 1].transform.position - stageManager.stageObj[i].transform.position;
+				Debug.DrawLine(stageManager.stageObj[i].transform.position, c);
+
+
+				//エラー処理
 				//if (null != stageManager.stageObj[i].gameObject.GetComponent<Parameter.StagePm>())
 				//{
-				//	var num =  cs_stage[i].s_data.Stage_Namber;
+				//	var num = cs_stage[i].s_data.Stage_Namber;
 				//}
 			}
 
@@ -32,12 +53,17 @@ namespace _retoroGame.Stage
 		// Update is called once per frame
 		void Update()
 		{
-			//番号を順番につなげる(本当はエディタ上で動作したい)
 			for (int i = 0; i < stage_obj_cnt; i++)
 			{
-				// 自身の向きベクトル取得
-				float angleDir = stageManager.stageObj[i].transform.eulerAngles.z * (Mathf.PI / 100.0f);
-				Vector3 dir = new Vector3(Mathf.Cos(angleDir), Mathf.Sin(angleDir), 0.0f);
+				Vector3 c; 
+				if (i >= 3)
+				{
+					 c = stageManager.stageObj[0].transform.position - stageManager.stageObj[i].transform.position;
+				}
+				else
+					c = stageManager.stageObj[i + 1].transform.position - stageManager.stageObj[i].transform.position;
+
+				Debug.DrawLine(stageManager.stageObj[i].transform.position, c);
 			}
 		}
 	}

@@ -392,6 +392,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4861143339519430930, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143339519430930, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143339519430935, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_Name
+      value: RightDown
+      objectReference: {fileID: 0}
     - target: {fileID: 4861143339598849514, guid: fb290ad7c35d930448794beea9299b57,
         type: 3}
       propertyPath: buttonManager
@@ -456,6 +471,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StageManaber
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143339768401734, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143339768401735, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_Name
+      value: LeftUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143340639841909, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143340639841909, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143340639841909, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143340639841909, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143340639841914, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_Name
+      value: RightUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143341085478758, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861143341085478759, guid: fb290ad7c35d930448794beea9299b57,
+        type: 3}
+      propertyPath: m_Name
+      value: LeftDown
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb290ad7c35d930448794beea9299b57, type: 3}

@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 参考URL：https://www.hanachiru-blog.com/entry/2019/03/19/173335
+/// </summary>
 namespace _retoroGame.Stage
 {
 	public class CreateStage : MonoBehaviour
@@ -17,54 +21,29 @@ namespace _retoroGame.Stage
 		// Start is called before the first frame update
 		void Start()
 		{
+			float p = 0;
 			//番号を順番につなげる(本当はエディタ上で動作したい)
-			for (int i = 0; i < stage_obj_cnt; i++)
+			for (int i = 0; i < stage_obj_cnt - 1; i++)
 			{
-				if (i >= 3) return;
-
-				//var nowstageT = stageManager.stageObj[i].transform;
-				//var nextstageT = stageManager.stageObj[i + 1].transform;
-
-				//var nowstageP = nowstageT.position;
-				//var nextstageP = nextstageT.position;
-
-				////1番の座標ー0番の座標＝大きさ
-				//var s = nextstageP - nowstageP;
-				////座標は現在いる場所
-				//var p = nowstageP - s;
-
-
-				//stageManager.stageObj[i].transform.position = p;
-				//stageManager.stageObj[i].transform.localScale = s;
-
-				var c = stageManager.stageObj[i + 1].transform.position - stageManager.stageObj[i].transform.position;
-				Debug.DrawLine(stageManager.stageObj[i].transform.position, c);
-
-
-				//エラー処理
-				//if (null != stageManager.stageObj[i].gameObject.GetComponent<Parameter.StagePm>())
-				//{
-				//	var num = cs_stage[i].s_data.Stage_Namber;
-				//}
+				if(stageManager.stageObj[i].transform.position.x == stageManager.stageObj[i + 1].transform.position.x)
+				{
+					p = stageManager.stageObj[i].transform.position.z - stageManager.stageObj[i+1].transform.position.z;
+					stageManager.stageObj[i].transform.DOScaleZ(p, 1f).SetEase(Ease.Linear);
+				}
+				if (stageManager.stageObj[i].transform.position.z == stageManager.stageObj[i + 1].transform.position.z)
+				{
+					p = stageManager.stageObj[i].transform.position.x - stageManager.stageObj[i + 1].transform.position.x;
+					stageManager.stageObj[i].transform.DOScaleX(p, 1f).SetEase(Ease.Linear);
+				}
 			}
-
+			p = stageManager.stageObj[0].transform.position.x - stageManager.stageObj[3].transform.position.x;
+			stageManager.stageObj[3].transform.DOScaleX(p, 1f).SetEase(Ease.Linear);
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
-			for (int i = 0; i < stage_obj_cnt; i++)
-			{
-				Vector3 c; 
-				if (i >= 3)
-				{
-					 c = stageManager.stageObj[0].transform.position - stageManager.stageObj[i].transform.position;
-				}
-				else
-					c = stageManager.stageObj[i + 1].transform.position - stageManager.stageObj[i].transform.position;
 
-				Debug.DrawLine(stageManager.stageObj[i].transform.position, c);
-			}
 		}
 	}
 }

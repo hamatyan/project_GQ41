@@ -195,8 +195,6 @@ GameObject:
   - component: {fileID: 7070919763168863096}
   - component: {fileID: 7070919763168863075}
   - component: {fileID: 7070919763168863076}
-  - component: {fileID: 7070919763168863078}
-  - component: {fileID: 7070919763168863079}
   m_Layer: 0
   m_Name: RightDown
   m_TagString: Untagged
@@ -265,31 +263,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7070919763168863078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070919763168863097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bdd4506e3af20546b83f46df1e53474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s_data: {fileID: 11400000, guid: 440649122eac595498ee37c34e7a7899, type: 2}
---- !u!114 &7070919763168863079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070919763168863097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19b07e62a92326f4f89966427da44640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7070919763201061688
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,8 +418,6 @@ GameObject:
   - component: {fileID: 7070919763813863279}
   - component: {fileID: 7070919763813863274}
   - component: {fileID: 7070919763813863275}
-  - component: {fileID: 7070919763813863277}
-  - component: {fileID: 7070919763813863278}
   m_Layer: 0
   m_Name: LeftDown
   m_TagString: Untagged
@@ -515,31 +486,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7070919763813863277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070919763813863264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bdd4506e3af20546b83f46df1e53474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s_data: {fileID: 11400000, guid: 50da9fd40d4bcf2439695cf2791f284d, type: 2}
---- !u!114 &7070919763813863278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070919763813863264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19b07e62a92326f4f89966427da44640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7070919763947588303
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,8 +541,6 @@ GameObject:
   - component: {fileID: 7070919764182686580}
   - component: {fileID: 7070919764182686581}
   - component: {fileID: 7070919764182686582}
-  - component: {fileID: 7070919764182686472}
-  - component: {fileID: 7070919764182686473}
   m_Layer: 0
   m_Name: RightUp
   m_TagString: Untagged
@@ -665,31 +609,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7070919764182686472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070919764182686474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bdd4506e3af20546b83f46df1e53474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s_data: {fileID: 11400000, guid: 65cd25aeb43e2c040bfaa16f2f38fd4b, type: 2}
---- !u!114 &7070919764182686473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070919764182686474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19b07e62a92326f4f89966427da44640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7070919764240353094
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,8 +651,6 @@ GameObject:
   - component: {fileID: 7070919764300098140}
   - component: {fileID: 7070919764300098119}
   - component: {fileID: 7070919764300098136}
-  - component: {fileID: 7070919764300098138}
-  - component: {fileID: 7070919764300098139}
   m_Layer: 0
   m_Name: LeftUp
   m_TagString: Untagged
@@ -802,28 +719,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7070919764300098138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070919764300098141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bdd4506e3af20546b83f46df1e53474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s_data: {fileID: 11400000, guid: 32756a1a29547ca4cac5f1ed4152170d, type: 2}
---- !u!114 &7070919764300098139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070919764300098141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19b07e62a92326f4f89966427da44640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

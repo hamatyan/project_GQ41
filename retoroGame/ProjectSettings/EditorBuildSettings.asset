@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_retoroGame/Scenes/TestScene/T_gimmik.unity
-    guid: 660b7407385d9be48960e11f10bc1e0e
+    path: Assets/_retoroGame/Scenes/Title.unity
+    guid: 72c16df4d42cb524c8c575ccdfdbd484
+  - enabled: 1
+    path: Assets/_retoroGame/Scenes/Game.unity
+    guid: 9089a7406ab4864448b94e80efb2d5f5
+  - enabled: 1
+    path: Assets/_retoroGame/Scenes/Result.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

@@ -1,0 +1,12 @@
+★ステージ作成方法★（壁）
+
+現状はStageManagercsの情報で作成になってる
+
+⓪伸びる方向のCreateStageObjを使用すること（LR：左右に伸びる）（FB：前後に伸びる）
+①スタート位置のObjにStageManagercsを追加
+②createstageEnum列挙型をWallに変更
+③始点と終点のObjをアタッチ
+
+参考程度
+y軸も伸びるのありかも
+

@@ -10,7 +10,7 @@ namespace _retoroGame.Camera
 	public class CameraController : MonoBehaviour
 	{
 		private GameObject mainCamera;              //メインカメラ格納用
-		[SerializeField] private GameObject playerObj;            //回転の中心となるプレイヤー格納用
+		[SerializeField] private GameObject playerObj;//回転の中心となるプレイヤー格納用
 		public float rotateSpeed = 2.0f;            //回転の速さ
 
 		private void Awake()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6550199411158198200}
   - component: {fileID: 57332201136703405}
   - component: {fileID: 2821310416164425435}
+  - component: {fileID: 1246574023746085773}
   m_Layer: 0
   m_Name: stageObj
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1246574023746085773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711548440239390825}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6601120799204016974
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +105,7 @@ GameObject:
   - component: {fileID: 7603033412208262422}
   - component: {fileID: 7965745096414657487}
   m_Layer: 0
-  m_Name: StageCreateObj_R
+  m_Name: StageCreateObj_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,6 +13,9 @@ https://section31.jp/gamedevelopment/unity/dotween2/
 Unity DOTween 入門
 https://qiita.com/broken55/items/df152c061da759ad1471
 
+Cinemachineの全機能を解説！ありとあらゆるカメラワークを高クオリティに作る方法総まとめ
+https://light11.hatenadiary.com/entry/2019/10/24/220542
+
 
 
 

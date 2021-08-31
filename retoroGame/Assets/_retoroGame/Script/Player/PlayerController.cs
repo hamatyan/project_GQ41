@@ -26,8 +26,7 @@ namespace _retoroGame.Player
 		private void Awake()
 		{
 			StateProcessor.State.Value = StateIdle;
-			if (buttonManager == null)
-				Debug.LogError(this.gameObject.name + "のbuttonManagerがアタッチされてない");
+
 		}
 
 		private void Start()
@@ -91,6 +90,9 @@ namespace _retoroGame.Player
 			switch (collision.collider.tag)
 			{
 				case "Button":
+					if (buttonManager == null)
+						Debug.LogError(this.gameObject.name + "のbuttonManagerがアタッチされてない");
+
 					var name = collision.gameObject.name.GetLastChar(-1).ToString();
 					var number = int.Parse(name);
 					ButtonFunction button = new ButtonFunction(collision.collider.gameObject/*, number*/);

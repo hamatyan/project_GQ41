@@ -28,6 +28,9 @@ namespace _retoroGame.Stage
 
 		private void Awake()
 		{
+			if (stageManager == null)
+				Debug.LogError(this.gameObject.name + "のstageManagerがアタッチされてない");
+
 			stage_obj_cnt = stageManager.stageObj.Count;
 		}
 
@@ -40,17 +43,7 @@ namespace _retoroGame.Stage
 					CreateBorderlineWall();
 					break;
 				case CreateStageEnum.Wall:
-					float p = 0;
-					if (startPos.position.x == goalPos.position.x)
-					{
-						p = startPos.position.z - goalPos.position.z;
-						startPos.transform.DOScaleZ(p, 1f).SetEase(Ease.Linear);
-					}
-					if (startPos.position.z == goalPos.position.z)
-					{
-						p = startPos.position.x - goalPos.position.x;
-						startPos.transform.DOScaleX(p, 1f).SetEase(Ease.Linear);
-					}
+					CreateWall();
 					break;
 				case CreateStageEnum.GoalWall:
 					break;
@@ -82,6 +75,21 @@ namespace _retoroGame.Stage
 			}
 			p = stageManager.stageObj[0].transform.position.x - stageManager.stageObj[3].transform.position.x;
 			stageManager.stageObj[3].transform.DOScaleX(p, 1f).SetEase(Ease.Linear);
+		}
+
+		void CreateWall()
+		{
+			float p = 0;
+			if (startPos.position.x == goalPos.position.x)
+			{
+				p = startPos.position.z - goalPos.position.z;
+				startPos.transform.DOScaleZ(p, 1f).SetEase(Ease.Linear);
+			}
+			if (startPos.position.z == goalPos.position.z)
+			{
+				p = startPos.position.x - goalPos.position.x;
+				startPos.transform.DOScaleX(p, 1f).SetEase(Ease.Linear);
+			}
 		}
 	}
 }

@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 2084199267387246476}
   - component: {fileID: 7603033412208262422}
   - component: {fileID: 7965745096414657487}
+  - component: {fileID: 879654567339490854}
   m_Layer: 0
   m_Name: StageCreateObj_FB
   m_TagString: Untagged
@@ -151,3 +152,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b07e62a92326f4f89966427da44640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &879654567339490854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6601120799204016974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f46eadd4478854e9d2ca36b3d4d6d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createstageEnum: 1
+  stageManager: {fileID: 0}
+  stage_obj_cnt: 0
+  startPos: {fileID: 0}
+  goalPos: {fileID: 0}

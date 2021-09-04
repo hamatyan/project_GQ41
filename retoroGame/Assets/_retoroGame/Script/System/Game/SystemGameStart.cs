@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class SystemGameStart : MonoBehaviour
 {
+	bool gamestartflag;	//ゲームスタートフラグ
+
     // Start is called before the first frame update
     void Start()
     {

@@ -17,7 +17,7 @@ namespace _retoroGame.Stage.Button
 		private List<ButtonPm>  buttonPms;	//ボタンパラメータcs
 
 		private List<StagePm> stagePms;		//ステージパラメータcs
-		private List<StagePm> buttonStagePms;//ボタンステージパラメータcs
+		public List<StagePm> buttonStagePms;//ボタンステージパラメータcs
 
 
 		//今後テキスト用のスクリプト化

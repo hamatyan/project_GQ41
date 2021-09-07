@@ -16,17 +16,18 @@ namespace _retoroGame.System
 	public class SystemGameStart : MonoBehaviour
 	{
 		bool gamestartflag; //ゲームスタートフラグ
-		GameObject mapCameraObj;
-		GameObject t_gamestartObj;    //ゲームスタート文字見えなくする
-		Material t_gamestartMaterial;    //
-		private GameState value;
+
+		GameObject mapCameraObj;		//マップカメラ
+		GameObject t_gamestartObj;    //ゲームスタート文字
+		Material t_gamestartMaterial;     //ゲームスタート文字マテリアル
+		private GameState state;
 
 		public SystemGameStart(GameObject obj, GameState value)
 		{
 			if (obj.GetComponent<SystemGameStart>() == null)
 			{
 				obj.AddComponent<SystemGameStart>();
-				this.value = value;
+				state = value;
 			}
 		}
 
@@ -35,7 +36,6 @@ namespace _retoroGame.System
 			t_gamestartObj = GameObject.Find("[Game]Canvas/T_Gamestart").gameObject;
 
 			mapCameraObj = GameObject.Find("MapCamera").gameObject;
-			mapCameraObj.SetActive(false);
 
 			t_gamestartMaterial = t_gamestartObj.GetComponent<Text>().material;
 		}
@@ -43,6 +43,8 @@ namespace _retoroGame.System
 		// Start is called before the first frame update
 		async void  Start()
 		{
+			mapCameraObj.SetActive(false);
+
 			//ローカルからワールド座標変換の座標に向かって移動
 			var p = this.gameObject.transform.position;
 			var worldP = transform.TransformPoint(t_gamestartObj.transform.parent.position);	
@@ -66,7 +68,7 @@ namespace _retoroGame.System
 			//マップカメラON
 			mapCameraObj.SetActive(true);
 
-			//GameStateをPlayモードに切り替え
+			//GameStateをStatePlayに切り替え
 			var statecs = this.gameObject.GetComponent<GameStateController>();
 			this.gameObject.GetComponent<GameStateController>().StateProcessor.State.Value = statecs.StatePlay;
 		}

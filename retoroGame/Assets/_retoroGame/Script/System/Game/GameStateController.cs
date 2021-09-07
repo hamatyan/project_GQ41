@@ -62,6 +62,7 @@ namespace _retoroGame.System
 		public void Play()
 		{
 			Debug.Log("Stateが「Play」に状態遷移しました。");
+			SystemGamePlay systemGamePlay = new SystemGamePlay(this.gameObject, StateProcessor.State.Value);
 		}
 
 		public void Clear()

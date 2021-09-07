@@ -51,7 +51,7 @@ namespace _retoroGame.Player
 
 		private void Update()
 		{
-			if (stateController._prevStateName != "State:GamePlay") return;
+			if (stateController.StateProcessor.State.Value != stateController.StatePlay) return;
 
 			if (Input.GetKeyDown(KeyCode.A) ||
 				Input.GetKeyDown(KeyCode.D) ||

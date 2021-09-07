@@ -6,10 +6,19 @@ namespace _retoroGame.Stage.Goal
 {
 	public class GoalFunction : MonoBehaviour
 	{
+		bool goalflag;
+		public bool Goalflag
+		{
+			get
+			{
+				return goalflag;
+			}
+		}
+
 		// Start is called before the first frame update
 		void Start()
 		{
-
+			goalflag = false;
 		}
 
 		// Update is called once per frame
@@ -22,7 +31,7 @@ namespace _retoroGame.Stage.Goal
 		{
 			if(other.tag == "Player")
 			{
-				Debug.Log("ステージクリア");
+				goalflag = true;
 			}
 		}
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 namespace _retoroGame.System
@@ -11,25 +12,26 @@ namespace _retoroGame.System
 
 		//ステート
 		public StateProcessor StateProcessor { get; set; } = new StateProcessor();
-		public PlayerStateIdle StateIdle { get; set; } = new PlayerStateIdle();
-		public PlayerStateRun StateRun { get; set; } = new PlayerStateRun();
-		public PlayerStateMove StateMove { get; set; } = new PlayerStateMove();
-		public PlayerStateJump StateJump { get; set; } = new PlayerStateJump();
+		public GameStateStart StateStart { get; set; } = new GameStateStart();
+		public GameStatePlay StatePlay { get; set; } = new GameStatePlay();
+		public GameStateClear StateClear { get; set; } = new GameStateClear();
+		public GameStateOver StateOver { get; set; } = new GameStateOver();
+		public GameStateEnd StateEnd { get; set; } = new GameStateEnd();
 		//随時追加
 
 		private void Awake()
 		{
-			StateProcessor.State.Value = StateIdle;
-
+			StateProcessor.State.Value = StateStart;
 		}
 
 		private void Start()
 		{
 			//ステート初期化
-			StateIdle.ExecAction = Idle;
-			StateRun.ExecAction = Run;
-			StateMove.ExecAction = Move;
-			StateJump.ExecAction = Jump;
+			StateStart.ExecAction = _Start;
+			StatePlay.ExecAction = Play;
+			StateClear.ExecAction = Clear;
+			StateOver.ExecAction = Over;
+			StateEnd.ExecAction = End;
 
 			//ステートの値が変更されたら実行を行うようにする
 			StateProcessor.State
@@ -44,14 +46,37 @@ namespace _retoroGame.System
 
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.A) ||
-				Input.GetKeyDown(KeyCode.D) ||
-				Input.GetKeyDown(KeyCode.W) ||
-				Input.GetKeyDown(KeyCode.S))
-				StateProcessor.State.Value = StateMove;
+			if (Input.GetKeyDown(KeyCode.F4))
+				StateProcessor.State.Value = StateOver;
 
-			if (Input.GetKeyDown(KeyCode.Space))
-				StateProcessor.State.Value = StateJump;
+			if (Input.GetKeyDown(KeyCode.F5))
+				StateProcessor.State.Value = StateEnd;
+		}
+
+		public void _Start()
+		{
+			Debug.Log("Stateが「_Start」に状態遷移しました。");
+			SystemGameStart systemGameStart = new SystemGameStart(this.gameObject, StateProcessor.State.Value);
+		}
+
+		public void Play()
+		{
+			Debug.Log("Stateが「Play」に状態遷移しました。");
+		}
+
+		public void Clear()
+		{
+			Debug.Log("Stateが「Clear」に状態遷移しました。");
+		}
+
+		public void Over()
+		{
+			Debug.Log("Stateが「Over」に状態遷移しました。");
+		}
+
+		public void End()
+		{
+			Debug.Log("Stateが「End」に状態遷移しました。");
 		}
 	}
 }

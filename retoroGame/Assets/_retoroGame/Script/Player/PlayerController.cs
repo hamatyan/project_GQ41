@@ -2,6 +2,7 @@
 using UniRx;
 using _retoroGame.Player.State;
 using _retoroGame.Stage.Button;
+using _retoroGame.System;
 
 /// <summary>
 /// 参考URL：https://www.hanachiru-blog.com/entry/2019/04/20/010740
@@ -14,9 +15,10 @@ namespace _retoroGame.Player
 		public string _prevStateName;
 
 		public ButtonManager buttonManager;
+		public GameStateController stateController;
 
 		//ステート
-		public StateProcessor StateProcessor { get; set; } = new StateProcessor();
+		public State.StateProcessor StateProcessor { get; set; } = new State.StateProcessor();
 		public PlayerStateIdle StateIdle { get; set; } = new PlayerStateIdle();
 		public PlayerStateRun StateRun { get; set; } = new PlayerStateRun();
 		public PlayerStateMove StateMove { get; set; } = new PlayerStateMove();
@@ -26,7 +28,6 @@ namespace _retoroGame.Player
 		private void Awake()
 		{
 			StateProcessor.State.Value = StateIdle;
-
 		}
 
 		private void Start()
@@ -50,6 +51,8 @@ namespace _retoroGame.Player
 
 		private void Update()
 		{
+			if (stateController._prevStateName != "State:GamePlay") return;
+
 			if (Input.GetKeyDown(KeyCode.A) ||
 				Input.GetKeyDown(KeyCode.D) ||
 				Input.GetKeyDown(KeyCode.W) ||

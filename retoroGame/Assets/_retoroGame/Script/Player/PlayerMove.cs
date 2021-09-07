@@ -35,12 +35,11 @@ namespace _retoroGame.Player.State
 		// Update is called once per frame
 		void Update()
 		{
-			Move();
 		}
 
 		void FixedUpdate()
 		{
-			
+			Move();
 		}
 
 		/// <summary>

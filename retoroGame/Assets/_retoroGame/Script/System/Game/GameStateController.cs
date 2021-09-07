@@ -46,11 +46,7 @@ namespace _retoroGame.System
 
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.F4))
-				StateProcessor.State.Value = StateOver;
 
-			if (Input.GetKeyDown(KeyCode.F5))
-				StateProcessor.State.Value = StateEnd;
 		}
 
 		public void _Start()
@@ -68,6 +64,7 @@ namespace _retoroGame.System
 		public void Clear()
 		{
 			Debug.Log("Stateが「Clear」に状態遷移しました。");
+			SystemGameClear systemGameClear = new SystemGameClear(this.gameObject, StateProcessor.State.Value);
 		}
 
 		public void Over()

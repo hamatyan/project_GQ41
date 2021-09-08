@@ -7,6 +7,14 @@ namespace _retoroGame.Stage.Gimmik
 {
 	public class StageRot : MonoBehaviour
 	{
+		public enum RotNum
+		{
+			Right,
+			Left
+		}
+
+		public RotNum rotNum;
+
 		public StageRot(GameObject obj)
 		{
 			if (obj.GetComponent<StageRot>() == null)
@@ -18,8 +26,15 @@ namespace _retoroGame.Stage.Gimmik
 		// Start is called before the first frame update
 		void Start()
 		{
-			this.transform.DORotate(Vector3.up * 90f, 1f);
-
+			switch(rotNum)
+			{
+				case RotNum.Left:
+					this.transform.DORotate(Vector3.up * 0f, 1f);
+					break;
+				case RotNum.Right:
+					this.transform.DORotate(Vector3.up * 90f, 1f);
+					break;
+			}
 			Destroy(this.gameObject.GetComponent<StageRot>());
 		}
 

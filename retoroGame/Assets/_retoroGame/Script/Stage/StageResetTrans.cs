@@ -10,6 +10,7 @@ namespace _retoroGame.Stage.Gimmik
 	{
 		public StageGimmick stageGimmick;
 
+
 		public StageResetTrans(GameObject obj)
 		{
 			if (obj.GetComponent<StageResetTrans>() == null)

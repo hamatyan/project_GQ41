@@ -22,9 +22,12 @@ namespace _retoroGame.Stage
 
 		public StageManager stageManager;  //ステージ格納用
 		public int stage_obj_cnt;
+		public int gimmickstagecnt;
 
 		[SerializeField] StagePm stagePm;
 		[SerializeField] Renderer rendererComponent;
+
+
 
 		//これは壁の生成に使う変数
 		public Transform startPos;
@@ -65,7 +68,7 @@ namespace _retoroGame.Stage
 		{
 			float p = 0;
 			//番号を順番につなげる(本当はエディタ上で動作したい)
-			for (int i = 0; i < stage_obj_cnt - 1; i++)
+			for (int i = 0; i < stage_obj_cnt - 1 - gimmickstagecnt; i++)
 			{
 				if (stageManager.stageObj[i].transform.position.x == stageManager.stageObj[i + 1].transform.position.x)
 				{

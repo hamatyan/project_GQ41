@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: s_number3
   m_EditorClassIdentifier: 
   stage_number: 3
-  color: {r: 0.9569671, g: 1, b: 0, a: 0}
+  color: {r: 0.07381868, g: 0, b: 1, a: 0}

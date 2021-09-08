@@ -6,7 +6,7 @@ using System;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine.UI;
-
+using Cysharp.Threading.Tasks;
 
 namespace _retoroGame.Stage.Button
 {
@@ -20,6 +20,9 @@ namespace _retoroGame.Stage.Button
 		public List<StagePm> buttonStagePms;//ボタンステージパラメータcs
 
 		public GameObject canvasbutton;
+
+		int cnt;
+		List<int> numbers;
 
 		//今後テキスト用のスクリプト化
 		public Text buttonstatetext;
@@ -45,6 +48,7 @@ namespace _retoroGame.Stage.Button
 			buttonPms = new List<ButtonPm>();
 			stagePms = new List<StagePm>();
 			buttonStagePms = new List<StagePm>();
+			
 
 			for (int i = 0;i < buttonObjs.Count;i++)
 			{
@@ -58,6 +62,7 @@ namespace _retoroGame.Stage.Button
 		// Start is called before the first frame update
 		void Start()
 		{
+					
 			//ボタンが押された時
 			this.UpdateAsObservable()
 				.Where(_ => buttonPms[select_number].isbutton == true)
@@ -68,9 +73,19 @@ namespace _retoroGame.Stage.Button
 					{
 						number = i;
 						if (buttonStagePms[select_number].s_data.Stage_Namber == stagePms[i].s_data.Stage_Namber)
-							break;
+						{
+							cnt++;
+							numbers.Add(number);
+						}
 					}
-					ButtonProsess(buttonPms[select_number]._Button, number);
+					for (int i = 0; i < cnt;i++)
+						ButtonProsess(buttonPms[select_number]._Button, numbers[i]);
+
+					//無理やり
+					buttonPms[select_number].isbutton = false;
+					numbers.Clear();
+					cnt = 0;
+					numbers = new List<int>();
 				});
 		}
 

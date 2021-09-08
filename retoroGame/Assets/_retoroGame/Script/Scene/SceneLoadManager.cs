@@ -42,7 +42,7 @@ namespace _retoroGame.Load
 		}
 		public void LoadGame()
 		{
-			SceneManager.LoadScene("Game");
+			SceneManager.LoadScene("StageSelect");
 		}
 
 		public void LoadStage1()

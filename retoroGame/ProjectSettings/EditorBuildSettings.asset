@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_retoroGame/Scenes/Title.unity
     guid: 72c16df4d42cb524c8c575ccdfdbd484
   - enabled: 1
+    path: Assets/_retoroGame/Scenes/StageSelect.unity
+    guid: c99109eab5fb157478a218a3fb9528ad
+  - enabled: 0
     path: Assets/_retoroGame/Scenes/Game.unity
     guid: 9089a7406ab4864448b94e80efb2d5f5
   - enabled: 1
@@ -17,4 +20,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_retoroGame/Scenes/TestScene/T_stage.unity
     guid: c46e16cd4d2bcdd4d96d5d303639b383
+  - enabled: 1
+    path: Assets/_retoroGame/Scenes/Stage/Stage1.unity
+    guid: 2c4e032968b5c624eb6649a2675424f8
+  - enabled: 1
+    path: Assets/_retoroGame/Scenes/Stage/Stage2.unity
+    guid: 8808eada86036484f85f4aae24a238f3
+  - enabled: 1
+    path: Assets/_retoroGame/Scenes/Stage/Stage3.unity
+    guid: 5a163487e445cb14d939bc8678b4df02
+  - enabled: 1
+    path: Assets/_retoroGame/Scenes/Stage/Stage4.unity
+    guid: 4a0c6e75d3dd70e47957c0cf67857a8e
+  - enabled: 1
+    path: Assets/_retoroGame/Scenes/Stage/Stage5.unity
+    guid: c3bb7a37e3965c74bb3ad2727738c566
   m_configObjects: {}

@@ -12,8 +12,7 @@ namespace _retoroGame.System
 	public class SystemGamePlay : MonoBehaviour
 	{
 		GameState state;
-
-		GoalFunction goalObj;			//ゴールcs
+		SystemObjInformation info;
 
 		public SystemGamePlay(GameObject obj, GameState value)
 		{
@@ -26,17 +25,20 @@ namespace _retoroGame.System
 
 		private void Awake()
 		{
-			goalObj = GameObject.Find("GoalObj").GetComponent<GoalFunction>();
+			info = this.gameObject.GetComponent<SystemObjInformation>();
 		}
 
 		// Start is called before the first frame update
 		async void Start()
 		{
-			await UniTask.WaitUntil(() => goalObj.Goalflag);
+			await UniTask.WaitUntil(() => info.goalFunction.Goalflag);
 
 			//GameStateをStateClearに切り替え
 			var statecs = this.gameObject.GetComponent<GameStateController>();
 			this.gameObject.GetComponent<GameStateController>().StateProcessor.State.Value = statecs.StateClear;
+
+			//システム情報からthis情報を削除
+			Destroy(this.GetComponent<SystemGamePlay>());
 		}
 
 		// Update is called once per frame

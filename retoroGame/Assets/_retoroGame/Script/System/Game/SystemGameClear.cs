@@ -39,6 +39,10 @@ namespace _retoroGame.System
 			//GameStateをStateClearに切り替え
 			var statecs = this.gameObject.GetComponent<GameStateController>();
 			this.gameObject.GetComponent<GameStateController>().StateProcessor.State.Value = statecs.StateEnd;
+
+
+			//システム情報からthis情報を削除
+			Destroy(this.GetComponent<SystemGameClear>());
 		}
 
 		// Update is called once per frame

@@ -75,6 +75,7 @@ namespace _retoroGame.System
 		public void End()
 		{
 			Debug.Log("Stateが「End」に状態遷移しました。");
+			SystemGameEnd systemGameEnd = new SystemGameEnd(this.gameObject, StateProcessor.State.Value);
 		}
 	}
 }

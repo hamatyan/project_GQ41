@@ -60,7 +60,6 @@ namespace _retoroGame.Stage.Button
 					if (Input.GetKeyDown(KeyCode.Return))
 					{
 						ButtonSwich();
-						Debug.Log("押した");
 						buttonPm.isbutton = true;
 						//送信　ボタンの中身(現在plyerControllerでやってる)
 						//buttonManager.Select_Number = select_number;

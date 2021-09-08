@@ -36,7 +36,7 @@ namespace _retoroGame.System
 			info.t_gamestartObj.SetActive(false);
 
 			//フェード（見えるようになる）
-			info.t_gamestartMaterial.DOFade(endValue: 1, duration: 0f);
+			info.canvasGroup[0].DOFade(endValue: 1, duration: 0f);
 		}
 
 		// Update is called once per frame

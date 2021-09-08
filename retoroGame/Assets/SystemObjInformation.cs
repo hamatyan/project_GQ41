@@ -9,17 +9,18 @@ namespace _retoroGame.System
 	public class SystemObjInformation : MonoBehaviour
 	{
 		public GameObject b_resultObj;   //リザルトボタン
-		public GameObject mapCameraObj;
-		public GameObject canvas;
+		public GameObject mapCameraObj;		//マップカメラ
 		public GameObject t_gamestartObj;    //ゲームスタート文字
+
+		public GameObject Gamecanvas;
 
 		public GoalFunction goalFunction;
 
-		public Material t_gamestartMaterial;     //ゲームスタート文字マテリアル
+		public List<CanvasGroup> canvasGroup;	//フェード
 
 		private void Awake()
 		{
-			t_gamestartMaterial = t_gamestartObj.GetComponent<Text>().material;
+			this.canvasGroup[0] = Gamecanvas.transform.GetChild(1).GetComponent<CanvasGroup>();
 		}
 
 		// Start is called before the first frame update

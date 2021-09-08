@@ -19,6 +19,7 @@ namespace _retoroGame.Stage.Button
 		private List<StagePm> stagePms;		//ステージパラメータcs
 		public List<StagePm> buttonStagePms;//ボタンステージパラメータcs
 
+		public GameObject canvasbutton;
 
 		//今後テキスト用のスクリプト化
 		public Text buttonstatetext;
@@ -99,7 +100,6 @@ namespace _retoroGame.Stage.Button
 					break;
 				case ButtonPm.Button.OFF:
 					Stage.Gimmik.StageResetTrans stageResetTrans = new Gimmik.StageResetTrans(stagePms[number].gameObject);
-
 					break;
 			}
 		}

@@ -14,15 +14,13 @@ namespace _retoroGame.Stage.Button
 	{
 		public ButtonPm buttonPm;
 		public ButtonManager buttonManager;
-		//private int select_number;
 
-		public ButtonFunction(GameObject obj/*, int selectnum*/)
+		public ButtonFunction(GameObject obj)
 		{
 			if (obj.GetComponent<ButtonFunction>() == null)
 			{
 				obj.AddComponent<ButtonFunction>();
 			}
-			//select_number = selectnum;
 		}
 
 		// Start is called before the first frame update
@@ -57,7 +55,7 @@ namespace _retoroGame.Stage.Button
 			{
 				case "Player":
 					//ボタン表示
-					if (Input.GetKeyDown(KeyCode.Return))
+					if (Input.GetKeyDown(KeyCode.K))
 					{
 						ButtonSwich();
 						buttonPm.isbutton = true;

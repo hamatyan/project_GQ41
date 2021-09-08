@@ -101,10 +101,16 @@ namespace _retoroGame.Player
 					ButtonFunction button = new ButtonFunction(collision.collider.gameObject/*, number*/);
 					buttonManager.Select_Number = number;
 					//ボタン表示
+					buttonManager.canvasbutton.SetActive(true);
 					break;
 				case "Enemy":
 					break;
 			}
+		}
+
+		private void OnCollisionExit(Collision collision)
+		{
+			buttonManager.canvasbutton.SetActive(false);
 		}
 	}
 }

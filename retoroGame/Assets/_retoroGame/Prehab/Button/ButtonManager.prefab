@@ -49,6 +49,7 @@ MonoBehaviour:
   buttonObjs:
   - {fileID: 8818757391522591830}
   - {fileID: 8818757392260091697}
+  buttonStagePms: []
   buttonstatetext: {fileID: 0}
 --- !u!1 &8818757392260091697
 GameObject:
@@ -170,6 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54773ef2b89ab55488b85483d16619ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rendererComponent: {fileID: 0}
+  stagePm: {fileID: 0}
   isbutton: 0
 --- !u!1001 &46908345105730351
 PrefabInstance:
@@ -238,7 +241,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1874295526513300033, guid: e23d2f61e3e6f594ca8a9f48dba33459, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e23d2f61e3e6f594ca8a9f48dba33459, type: 3}
 --- !u!1 &8818757391522591830 stripped
 GameObject:

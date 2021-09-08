@@ -167,5 +167,7 @@ MonoBehaviour:
   createstageEnum: 1
   stageManager: {fileID: 0}
   stage_obj_cnt: 0
-  startPos: {fileID: 0}
+  stagePm: {fileID: 7603033412208262422}
+  rendererComponent: {fileID: 2821310416164425435}
+  startPos: {fileID: 2084199267387246476}
   goalPos: {fileID: 0}

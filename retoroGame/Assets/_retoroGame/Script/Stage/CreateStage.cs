@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using _retoroGame.Stage.Parameter;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,9 @@ namespace _retoroGame.Stage
 		public StageManager stageManager;  //ステージ格納用
 		public int stage_obj_cnt;
 
+		[SerializeField] StagePm stagePm;
+		[SerializeField] Renderer rendererComponent;
+
 		//これは壁の生成に使う変数
 		public Transform startPos;
 		public Transform goalPos;
@@ -43,6 +47,7 @@ namespace _retoroGame.Stage
 					CreateBorderlineWall();
 					break;
 				case CreateStageEnum.Wall:
+					this.rendererComponent.material.DOColor(stagePm.s_data.stage_Color, 1f);
 					CreateWall();
 					break;
 				case CreateStageEnum.GoalWall:

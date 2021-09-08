@@ -51,7 +51,7 @@ namespace _retoroGame.System
 			await UniTask.WaitUntil(() => text.color == Color.black);
 
 			//フェード（見えなくなる）
-			info.t_gamestartMaterial.DOFade(endValue: 0, duration: 1f);
+			info.canvasGroup[0].DOFade(endValue: 0, duration: 1f);
 
 			//マップカメラON
 			info.mapCameraObj.SetActive(true);

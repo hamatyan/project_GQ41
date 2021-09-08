@@ -989,12 +989,12 @@ PrefabInstance:
     - target: {fileID: 5233136296679496176, guid: 90a2f102a83ea0641ba39779559b7eb9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.109484725
+      value: 0.109484695
       objectReference: {fileID: 0}
     - target: {fileID: 5233136296679496176, guid: 90a2f102a83ea0641ba39779559b7eb9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.018813571
+      value: -0.018813577
       objectReference: {fileID: 0}
     - target: {fileID: 5233136296679496176, guid: 90a2f102a83ea0641ba39779559b7eb9,
         type: 3}
@@ -1201,6 +1201,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlaneObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332594257783399744, guid: b7da3413032dbb040bdf37876f3f8cfb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plane
       objectReference: {fileID: 0}
     - target: {fileID: 5332594257783399805, guid: b7da3413032dbb040bdf37876f3f8cfb,
         type: 3}
@@ -1730,12 +1735,12 @@ PrefabInstance:
     - target: {fileID: 5581162258714456940, guid: 725f28fe1213d9b4c8469e78b92f214a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.110070206
+      value: 0.11007018
       objectReference: {fileID: 0}
     - target: {fileID: 5581162258714456940, guid: 725f28fe1213d9b4c8469e78b92f214a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0150137255
+      value: -0.015013719
       objectReference: {fileID: 0}
     - target: {fileID: 5581162258714456942, guid: 725f28fe1213d9b4c8469e78b92f214a,
         type: 3}
@@ -1860,17 +1865,17 @@ PrefabInstance:
     - target: {fileID: 5581162260186999329, guid: 725f28fe1213d9b4c8469e78b92f214a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.24833423
+      value: 0.24833424
       objectReference: {fileID: 0}
     - target: {fileID: 5581162260186999329, guid: 725f28fe1213d9b4c8469e78b92f214a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.10756528
+      value: 0.107565254
       objectReference: {fileID: 0}
     - target: {fileID: 5581162260186999329, guid: 725f28fe1213d9b4c8469e78b92f214a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.027759122
+      value: -0.027759118
       objectReference: {fileID: 0}
     - target: {fileID: 5581162260186999331, guid: 725f28fe1213d9b4c8469e78b92f214a,
         type: 3}

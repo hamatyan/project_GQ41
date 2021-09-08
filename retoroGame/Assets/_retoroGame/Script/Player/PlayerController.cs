@@ -17,6 +17,8 @@ namespace _retoroGame.Player
 		public ButtonManager buttonManager;
 		public GameStateController stateController;
 
+		bool b;
+
 		//ステート
 		public State.StateProcessor StateProcessor { get; set; } = new State.StateProcessor();
 		public PlayerStateIdle StateIdle { get; set; } = new PlayerStateIdle();
@@ -32,6 +34,8 @@ namespace _retoroGame.Player
 
 		private void Start()
 		{
+			b = false;
+
 			//ステート初期化
 			StateIdle.ExecAction = Idle;
 			StateRun.ExecAction = Run;
@@ -59,8 +63,11 @@ namespace _retoroGame.Player
 				Input.GetKeyDown(KeyCode.S))
 				StateProcessor.State.Value = StateMove;
 
-			if(Input.GetKeyDown(KeyCode.Space))
+			if(Input.GetKeyDown(KeyCode.Space) && !b)
+			{
+				b = true;
 				StateProcessor.State.Value = StateJump;
+			}
 		}
 
 		public void Idle()

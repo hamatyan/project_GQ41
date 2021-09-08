@@ -18,6 +18,7 @@ namespace _retoroGame.Player.State
 		private float jumpanimetiontime = 0.5f;
 
 		public Rigidbody rb;
+		bool jumpflag;
 
 		/// <summary>
 		/// 引数ありコンストラクタ
@@ -43,8 +44,11 @@ namespace _retoroGame.Player.State
 		// Update is called once per frame
 		void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.Space))
+			if (Input.GetKeyDown(KeyCode.Space) && !jumpflag)
+			{
+				jumpflag = true;
 				Jump();
+			}
 		}
 
 		public void Jump()
@@ -55,6 +59,16 @@ namespace _retoroGame.Player.State
 					1,						// ジャンプする回数
 					0.5f				// アニメーション時間
 					);
+		}
+
+		private void OnCollisionEnter(Collision collision)
+		{
+			switch (collision.collider.tag)
+			{
+				case "Plane":
+					jumpflag = false;
+					break;
+			}
 		}
 	}
 }

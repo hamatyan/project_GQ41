@@ -22,7 +22,7 @@ namespace _retoroGame.Stage.Button
 		public GameObject canvasbutton;
 
 		int cnt;
-		List<int> numbers;
+		public List<int> numbers;
 
 		//今後テキスト用のスクリプト化
 		public Text buttonstatetext;

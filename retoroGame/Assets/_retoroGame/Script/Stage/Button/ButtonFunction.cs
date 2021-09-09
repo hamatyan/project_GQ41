@@ -49,9 +49,9 @@ namespace _retoroGame.Stage.Button
 			}
 		}
 
-		private void OnCollisionStay(Collision collision)
+		private void OnTriggerStay(Collider collider)
 		{
-			switch (collision.collider.tag)
+			switch (collider.tag)
 			{
 				case "Player":
 					//ボタン表示
@@ -60,7 +60,6 @@ namespace _retoroGame.Stage.Button
 						ButtonSwich();
 						buttonPm.isbutton = true;
 						//送信　ボタンの中身(現在plyerControllerでやってる)
-						//buttonManager.Select_Number = select_number;
 					}
 					break;
 			}

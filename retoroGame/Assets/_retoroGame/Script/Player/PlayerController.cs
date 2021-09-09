@@ -95,27 +95,27 @@ namespace _retoroGame.Player
 		/// 当たり判定
 		/// </summary>
 		/// <param name="collider"></param>
-		private void OnCollisionEnter(Collision collision)
+		private void OnTriggerEnter(Collider collider)
 		{
-			switch (collision.collider.tag)
+			switch (collider.tag)
 			{
 				case "Button":
 					if (buttonManager == null)
 						Debug.LogError(this.gameObject.name + "のbuttonManagerがアタッチされてない");
 
-					var name = collision.gameObject.name.GetLastChar(-1).ToString();
+					var name = collider.gameObject.name.GetLastChar(-1).ToString();
 					var number = int.Parse(name);
-					ButtonFunction button = new ButtonFunction(collision.collider.gameObject/*, number*/);
+					ButtonFunction button = new ButtonFunction(collider.gameObject/*, number*/);
 					buttonManager.Select_Number = number;
 					//ボタン表示
 					buttonManager.canvasbutton.SetActive(true);
 					break;
-				case "Enemy":
-					break;
+				//case "Enemy":
+				//	break;
 			}
 		}
 
-		private void OnCollisionExit(Collision collision)
+		private void OnTriggerExit(Collider collider)
 		{
 			buttonManager.canvasbutton.SetActive(false);
 		}
